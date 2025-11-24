@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Space Tower Defense | Group 2</title>
+    <link rel="stylesheet" href="style_johnny.css" />
+</head>
+
+<body>
+    <!-- Menu Screen -->
+    <div id="menuScreen" class="screen active">
+        <h1>Space Tower Defense</h1>
+        <p class="subtitle">Defend your base from waves of enemies!</p>
+        <div class="instructions-box">
+            <h2>How to Play</h2>
+            <ul>
+                <li>◀ ▶ Move ship left/right</li>
+                <li>SPACE - Fire weapons</li>
+                <li>Destroy enemies before they reach the bottom</li>
+                <li>Choose upgrades between levels</li>
+                <li>Survive as many levels as you can!</li>
+            </ul>
+        </div>
+        <button id="startButton" class="btn btn-large">Start Game</button>
+    </div>
+
+    <!-- Game Screen -->
+    <div id="gameScreen" class="screen">
+        
+        
+         <!-- Main Menu, Restart, Pause/Unpause -->
+         <div id="topControls">
+        <button id="menuBtn" class="btn">Main Menu</button>
+        <button id="pauseBtn" class="btn">Pause</button>
+        <button id="restartLevelBtn" class="btn">Restart</button>
+    </div>
+        
+        
+        
+        
+        <canvas id="gameCanvas" width="1000" height="800"></canvas>
+    </div>
+
+    <!-- Level Complete Screen -->
+    <div id="levelCompleteScreen" class="screen">
+        <h1 class="success">Level Complete!</h1>
+        <p id="levelCompleteScore" class="score-display"></p>
+        <div class="upgrade-container">
+            <h2>Choose an Upgrade</h2>
+            <div class="upgrade-grid">
+                <button class="upgrade-btn damage-upgrade" data-upgrade="damage">
+                    <div class="upgrade-title">+Damage</div>
+                    <div class="upgrade-level" id="damageLevel">Level 1/5</div>
+                    <div class="upgrade-desc">Deal more damage per hit</div>
+                </button>
+                
+                <button class="upgrade-btn firerate-upgrade" data-upgrade="fireRate">
+                    <div class="upgrade-title">+Fire Rate</div>
+                    <div class="upgrade-level" id="fireRateLevel">Level 1/5</div>
+                    <div class="upgrade-desc">Shoot faster</div>
+                </button>
+                
+                <button class="upgrade-btn speed-upgrade" data-upgrade="bulletSpeed">
+                    <div class="upgrade-title">+Bullet Speed</div>
+                    <div class="upgrade-level" id="bulletSpeedLevel">Level 1/5</div>
+                    <div class="upgrade-desc">Faster projectiles</div>
+                </button>
+                
+                <button class="upgrade-btn multishot-upgrade" data-upgrade="multiShot">
+                    <div class="upgrade-title">Multi-Shot</div>
+                    <div class="upgrade-level" id="multiShotLevel">Locked</div>
+                    <div class="upgrade-desc">Fire 3 bullets at once</div>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Game Over Screen -->
+    <div id="gameOverScreen" class="screen">
+        <h1 class="game-over">Game Over</h1>
+        <p id="finalScore" class="score-display"></p>
+        <p id="finalLevel" class="level-display"></p>
+        <button id="restartButton" class="btn btn-large">Play Again</button>
+    </div>
+
+    <audio id="bgMusic" src="spaceship-arcade-shooter-game-background-soundtrack-318508.mp3" preload="auto" loop>
+    </audio>
+    
+    <audio id="shootSound">
+    <source src="laser-gun-81720.mp3" type="audio/wav">
+</audio>
+
+    
+   <script src="game_johnny.js"></script>
+
+</body>
+</html>
